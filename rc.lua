@@ -17,6 +17,9 @@
 	local naughty = require("naughty")
 	local menubar = require("menubar")
 
+-- Import external files
+	local status_bar_separator = require("WidgetSeparator")
+
 -- {{{ Error handling
 	-- Check if awesome encountered an error during startup and fell back to
 	-- another config (This code will only ever execute for the fallback config)
@@ -145,12 +148,6 @@
 		end
 	end)
 	bw_timer:start()
-
-	-- Create the separator widget
-	--separator_widget= wibox.widget.imagebox()
-	--separator_widget:set_image(awful.util.getdir("config") .. "/vertical_separator.png")
-	separator_widget = wibox.widget.textbox()
-	separator_widget:set_text("  |  ")
 
 	-- Create a textclock widget
 	mytextclock = awful.widget.textclock("%a %b %d %I:%M:%S", 1)
