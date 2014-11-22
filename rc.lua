@@ -18,7 +18,7 @@
 	local menubar = require("menubar")
 
 -- Import external files
-	local status_bar_separator = require("WidgetSeparator")
+	local status_bar_separator = require("widgets/WidgetSeparator")
 
 -- {{{ Error handling
 	-- Check if awesome encountered an error during startup and fell back to
