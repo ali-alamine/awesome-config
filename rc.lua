@@ -19,6 +19,7 @@
 
 -- Import external files
 	local status_bar_separator = require("widgets/WidgetSeparator")
+	local battery_bar_widget = require("widgets/BatteryBar")
 
 -- {{{ Error handling
 	-- Check if awesome encountered an error during startup and fell back to
