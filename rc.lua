@@ -94,7 +94,7 @@
 	tags = {}
 	for s = 1, screen.count() do
 	    -- Each screen has its own tag table.
-			tags = {names = { "web", "terminals", 3, 4, 5, 6, 7, "files", "vlc" },
+			tags = {names = { "web", "terminals", 3, 4, 5, 6, "games", "files", "vlc" },
 				layout = {layouts[2],layouts[2],layouts[2],layouts[2],layouts[2],layouts[2],
 									layouts[2],layouts[2],layouts[1]}}
 	    tags[s] = awful.tag( tags.names, s, tags.layout)
@@ -115,8 +115,6 @@
 						  }
 					})
 
-		mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-						     menu = mymainmenu })
 
 	-- Menubar configuration
 		menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -199,7 +197,6 @@
 
 	    -- Widgets that are aligned to the left
 		    local left_layout = wibox.layout.fixed.horizontal()
-		    left_layout:add(mylauncher)
 		    left_layout:add(mytaglist[s])
 		    left_layout:add(mypromptbox[s])
 
@@ -426,6 +423,12 @@
 			 --Set Chrome to always map on tags number 1 of screen 1.
 			 { rule = { class = "chrome" },
 				 properties = { tag = tags[1][1] } },
+			{rule = {class = "wesnoth" },
+				properties = { tag = tags[1][7] } },
+			{rule = {class = "steam" },
+				properties = { tag = tags[1][7] } },
+			{rule = {class = "dota" },
+				properties = { tag = tags[1][7] } },
 	}
 -- }}}
 
@@ -505,4 +508,4 @@
 
 -- Applications startup
 --awful.util.spawn_with_shell("run_once google-chrome-unstable")
-awful.util.spawn_with_shell("run_once vlc")
+--awful.util.spawn_with_shell("run_once vlc")
