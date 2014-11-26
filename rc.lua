@@ -21,6 +21,7 @@
 	local status_bar_separator = require("widgets/WidgetSeparator")
 	local battery_bar_widget = require("widgets/BatteryBar")
 	require("fixes/FixMute")
+	require("widgets/NetworkWidgets")
 
 -- {{{ Error handling
 	-- Check if awesome encountered an error during startup and fell back to
@@ -127,6 +128,7 @@
 
 	-- Create a wibox for each screen and add it
 	mywibox = {}
+	bottomwibox = {}
 	mypromptbox = {}
 	mylayoutbox = {}
 	mytaglist = {}
@@ -216,8 +218,20 @@
 		    layout:set_middle(mytasklist[s])
 		    layout:set_right(right_layout)
 
-	    mywibox[s]:set_widget(layout)
+				mywibox[s]:set_widget(layout)
+
+			-- Create a lower screen wibox {{{
+				bottomwibox[s] = awful.wibox({ position = "bottom", screen = 1 })
+				local bottom_right_layout = wibox.layout.fixed.horizontal()
+				bottom_right_layout:add(upload_widget)
+				bottom_right_layout:add(download_widget)
+				local bottom_layout = wibox.layout.align.horizontal()
+				bottom_layout:set_right(bottom_right_layout);
+
+				bottomwibox[s]:set_widget(bottom_layout)
+			-- }}}
 	end
+
 -- }}}
 
 -- {{{ Mouse bindings
