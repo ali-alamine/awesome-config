@@ -124,7 +124,7 @@
 -- {{{ Wibox
 
 	-- Create a textclock widget
-	mytextclock = awful.widget.textclock("%a %b %d %I:%M:%S", 1)
+	mytextclock = awful.widget.textclock("%a %b %d %I:%M", 60)
 
 	-- Create a wibox for each screen and add it
 	mywibox = {}
