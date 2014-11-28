@@ -223,6 +223,7 @@
 			-- Create a lower screen wibox {{{
 				bottomwibox[s] = awful.wibox({ position = "bottom", screen = 1 })
 				local bottom_right_layout = wibox.layout.fixed.horizontal()
+				bottom_right_layout:add(cpuwidget)
 				bottom_right_layout:add(upload_widget)
 				bottom_right_layout:add(download_widget)
 				local bottom_layout = wibox.layout.align.horizontal()
