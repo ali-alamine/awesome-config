@@ -322,8 +322,21 @@
 
 			-- Hide status bar
 			awful.key({ modkey }, "b", function ()
-						mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible
+						mywibox[mouse.screen].visible 
+								= not mywibox[mouse.screen].visible
+						bottomwibox[mouse.screen].visible 
+								= mywibox[mouse.screen].visible
 				end),
+
+			awful.key({ modkey }, "[", function()
+						mywibox[mouse.screen].visible 
+								= not mywibox[mouse.screen].visible
+			end),
+
+			awful.key({ modkey }, "]", function()
+						bottomwibox[mouse.screen].visible 
+								= not bottomwibox[mouse.screen].visible
+			end),
 
 	    -- Prompt
 	    awful.key({ modkey },            "r",     
