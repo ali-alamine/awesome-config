@@ -22,6 +22,8 @@
 	local battery_bar_widget = require("widgets/BatteryBar")
 	require("fixes/FixMute")
 	require("widgets/NetworkWidgets")
+	require("widgets/MemoryWidgets")
+	require("widgets/CpuWidget")
 
 -- {{{ Error handling
 	-- Check if awesome encountered an error during startup and fell back to
