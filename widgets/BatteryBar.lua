@@ -1,4 +1,5 @@
 local awful = require("awful")
+local vicious = require("vicious")
 
 -- Create the battery widget
 mybatterywidget = awful.widget.progressbar()
@@ -8,10 +9,11 @@ mybatterywidget:set_vertical(true)
 mybatterywidget:set_background_color('#000000')
 mybatterywidget:set_color('FFFFFF')
 mybatterywidget:set_value(0)
+--vicious.register( mybatterywidget, vicious.widgets.bat, "$2", 1, "BAT")
 local bw_timer = timer({ timeout = 1 })
 bw_timer:connect_signal("timeout", function()
 	local fd = io.popen(
-			   "upower -d "
+				 "upower -d "
 			.. "| awk '$1=/percentage/{print $2;exit;}' "
 			.. "| sed -e 's/^\\([[:digit:]]*\\)\\(%\\)$/\\1/g'")
 	local str = fd:read("*l")
