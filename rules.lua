@@ -12,20 +12,36 @@ local beautiful = require("beautiful")
 			     raise = true,
 			     keys = clientkeys,
 			     buttons = clientbuttons } },
+			
+			-- VLC
 	    { rule = { class = "Vlc" },
 	      properties = { floating = true, tag = tags[1][9] } },
+
 	    { rule = { class = "pinentry" },
 	      properties = { floating = true } },
+
+			-- GIMP
 	    { rule = { class = "gimp" },
 	      properties = { floating = true } },
-			 --Set Chrome to always map on tags number 1 of screen 1.
+
+			-- Google chrome
 			 { rule = { class = "chrome" },
 				 properties = { tag = tags[1][1] } },
+
+			-- Battle for wesnoth
 			{rule = {class = "wesnoth" },
 				properties = { tag = tags[1][7] } },
+
+			-- Steam
 			{rule = {class = "steam" },
 				properties = { tag = tags[1][7] } },
+			
+			-- dota2
 			{rule = {class = "dota" },
 				properties = { tag = tags[1][7] } },
+
+			-- Thunar (file manager)
+			{rule = {class = "thunar" },
+				properties = { tag = tags[1][8] } },
 	}
 -- }}}

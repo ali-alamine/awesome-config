@@ -5,7 +5,7 @@
 	require("awful.autofocus")
 
 -- launch the Cairo Composite Manager
-	awful.util.spawn_with_shell("cairo-compmgr &")
+	--awful.util.spawn_with_shell("cairo-compmgr &")
 
 -- Theme handling library
 	local beautiful = require("beautiful")
@@ -17,7 +17,7 @@
 -- Fix the mute in my laptop with alsamixer
 	require("fixes/FixMute")
 
--- Import the library responsible of error handling
+-- Import the library responsible of error handling errors
 	require("errors")
 
 -- Themes define colours, icons, font and wallpapers.
@@ -25,9 +25,11 @@
 	-- Wallpaper
 		if beautiful.wallpaper then
 				for s = 1, screen.count() do
-			gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+					gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 				end
 		end
+	-- Get the wallpapers
+	require("backgroundImages")
 
 -- Import variables
 	require("variables")
@@ -59,5 +61,4 @@
 	require("signals")
 
 -- Applications startup
---awful.util.spawn_with_shell("run_once google-chrome-unstable")
---awful.util.spawn_with_shell("run_once vlc")
+	require("ApplicationStartup")

@@ -1,5 +1,14 @@
 local awful = require("awful")
 
+local quake = require("quake")
+
+local quakeconsole = {}
+for s = 1, screen.count() do
+   quakeconsole[s] = quake({ terminal,
+			     height = 0.3,
+			     screen = s })
+end
+
 -- {{{ Key bindings
 	globalkeys = awful.util.table.join(
 	    awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
@@ -66,16 +75,14 @@ local awful = require("awful")
 				function() os.execute("xscreensaver-command -lock") end),
 		
 	    -- Control the brightness
-	    awful.key({ modkey,           }, "F3", 
+	    awful.key({}, "XF86MonBrightnessUp", 
 				function() os.execute("xbacklight -inc 40") end),
-	    awful.key({ modkey,           }, "F2", 
+	    awful.key({}, "XF86MonBrightnessDown", 
 				function() os.execute("xbacklight -dec 40") end),
 
 			-- Control the sounds
-			awful.key({ modkey,           }, "F7", 
-				function() os.execute("amixer set Master 2%-") end),
-			awful.key({ modkey,					  }, "F8", 
-				function() os.execute("amixer set Master 2%+") end),
+			awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 2%+", false) end),
+			awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 2%-", false) end),
 
 			-- Hide status bar
 			awful.key({ modkey }, "b", function ()
@@ -97,9 +104,13 @@ local awful = require("awful")
 			
 			-- Applications shortcuts
 			awful.key({ modkey,           }, "d",
-				function () os.execute("thunar &") end),
+				function () os.execute("sunflower &") end),
 			awful.key({ modkey,           }, "g",
 				function () os.execute("google-chrome-unstable &") end),
+			awful.key({ modkey,						}, "e",
+				function () os.execute("eclipse &") end),
+			awful.key({ modkey }, ";",
+	     function () quakeconsole[mouse.screen]:toggle() end),
 
 
 	    -- Prompt
