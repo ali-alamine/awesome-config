@@ -13,6 +13,14 @@ local beautiful = require("beautiful")
 			     keys = clientkeys,
 			     buttons = clientbuttons } },
 			
+			-----------------------------------------------------
+			-----------------------------------------------------
+			--
+			-- General
+			--
+			-----------------------------------------------------
+			-----------------------------------------------------
+
 			-- VLC
 	    { rule = { class = "Vlc" },
 	      properties = { floating = true, tag = tags[1][9] } },
@@ -28,6 +36,14 @@ local beautiful = require("beautiful")
 			 { rule = { class = "chrome" },
 				 properties = { tag = tags[1][1] } },
 
+			-----------------------------------------------------
+			-----------------------------------------------------
+			--
+			-- Games
+			--
+			-----------------------------------------------------
+			-----------------------------------------------------
+
 			-- Battle for wesnoth
 			{rule = {class = "wesnoth" },
 				properties = { tag = tags[1][7] } },
@@ -35,13 +51,11 @@ local beautiful = require("beautiful")
 			-- Steam
 			{rule = {class = "steam" },
 				properties = { tag = tags[1][7] } },
+			{rule = {class = "steamwebhelper" },
+				properties = { tag = tags[1][7] } },
 			
 			-- dota2
 			{rule = {class = "dota" },
 				properties = { tag = tags[1][7] } },
-
-			-- Thunar (file manager)
-			{rule = {class = "thunar" },
-				properties = { tag = tags[1][8] } },
 	}
 -- }}}
