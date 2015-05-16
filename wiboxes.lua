@@ -5,6 +5,7 @@
 	require("widgets/NetworkWidgets")
 	require("widgets/MemoryWidgets")
 	require("widgets/CpuWidget")
+	require("widgets/VolumeBar")
 
 -- {{{ Wibox
 
@@ -108,6 +109,7 @@
 			-- Create a lower screen wibox {{{
 				bottomwibox[s] = awful.wibox({ position = "bottom", screen = 1 })
 				local bottom_right_layout = wibox.layout.fixed.horizontal()
+				bottom_right_layout:add(my_volume)
 				bottom_right_layout:add(cpuwidget)
 				bottom_right_layout:add(separator_widget)
 				bottom_right_layout:add(memory_widget)

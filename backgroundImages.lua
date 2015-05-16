@@ -27,8 +27,7 @@ end
 local wp_index = 1
 local wp_timeout  = 15
 local wp_path = "/home/ali/backgroundimages/"
-local wp_filter = 
-					function(s) 
+local wp_filter = function(s) 
 							return string.match(s,"%.png$") or string.match(s,"%.jpg$") end
 local wp_files = scandir(wp_path, wp_filter)
  
