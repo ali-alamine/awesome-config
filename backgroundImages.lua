@@ -33,7 +33,8 @@ local wp_files = scandir(wp_path, wp_filter)
  
 -- setup the timer
 local wp_timer = timer { timeout = wp_timeout }
-wp_timer:connect_signal("timeout", function()
+
+local changeWallpaper = function()
  
   -- set wallpaper to current index for all screens
 	print(wp_path)
@@ -52,7 +53,10 @@ wp_timer:connect_signal("timeout", function()
   --restart the timer
   wp_timer.timeout = wp_timeout
   wp_timer:start()
-end)
+end
+
+wp_timer:connect_signal("timeout", changeWallpaper)
  
 -- initial start when rc.lua is first run
+changeWallpaper()
 wp_timer:start()
