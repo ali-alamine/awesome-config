@@ -5,8 +5,8 @@ local awful = require("awful")
 	for s = 1, screen.count() do
 	    -- Each screen has its own tag table.
 			tags = {names = { "web", "terminals", 3, 4, 5, 6, "games", "files", "vlc" },
-				layout = {layouts[2],layouts[2],layouts[2],layouts[2],layouts[2],layouts[2],
-									layouts[2],layouts[2],layouts[1]}}
+				layout = {layouts[10],layouts[2],layouts[2],layouts[2],layouts[2],layouts[2],
+									layouts[2],layouts[2],layouts[10]}}
 	    tags[s] = awful.tag( tags.names, s, tags.layout)
 	end
 -- }}}

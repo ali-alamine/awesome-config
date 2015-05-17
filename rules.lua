@@ -23,7 +23,7 @@ local beautiful = require("beautiful")
 
 			-- VLC
 	    { rule = { class = "Vlc" },
-	      properties = { floating = true, tag = tags[1][9] } },
+	      properties = { tag = tags[1][9] } },
 
 	    { rule = { class = "pinentry" },
 	      properties = { floating = true } },
