@@ -37,9 +37,6 @@ local wp_timer = timer { timeout = wp_timeout }
 local changeWallpaper = function()
  
   -- set wallpaper to current index for all screens
-	print(wp_path)
-	print(wp_files[0])
-	print(wp_index)
   for s = 1, screen.count() do
     gears.wallpaper.maximized(wp_path .. wp_files[wp_index], s, true)
   end
