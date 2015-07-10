@@ -22,19 +22,19 @@ local beautiful = require("beautiful")
 			-----------------------------------------------------
 
 			-- VLC
-	    { rule = { class = "Vlc" },
-	      properties = { tag = tags[1][9] } },
+		{ rule = { class = "Vlc" },
+		  properties = { tag = tags[1][9] } },
 
-	    { rule = { class = "pinentry" },
-	      properties = { floating = true } },
+		{ rule = { class = "pinentry" },
+		  properties = { floating = true } },
 
 			-- GIMP
-	    { rule = { class = "gimp" },
-	      properties = { floating = true } },
+		{ rule = { class = "gimp" },
+		  properties = { floating = true } },
 
-			-- Google chrome
-			 { rule = { class = "chrome" },
-				 properties = { tag = tags[1][1] } },
+			---- Google chrome
+			 --{ rule = { class = "chrome" },
+				 --properties = { tag = tags[1][1] } },
 
 			-----------------------------------------------------
 			-----------------------------------------------------
