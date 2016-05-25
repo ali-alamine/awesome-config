@@ -1,1 +1,1 @@
-This is my awesome configuration folder. Hope it helps :)
+This is my awesome window manager configuration folder. Hope it helps :)
